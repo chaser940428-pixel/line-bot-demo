@@ -14,6 +14,7 @@ This bot simulates a full-service front desk for a restaurant (稻香園), handl
 
 | Scenario | How it works |
 |----------|-------------|
+| **Onboarding** | Sends a welcome message explaining available commands the moment a user adds the bot |
 | **Table reservations** | Guides customers through a 5-step conversational flow (name → date → time → guests → confirm), then saves the record |
 | **FAQ answering** | Answers questions about hours, location, parking, and menu using LLM-powered responses |
 | **Intent fallback** | For unclear messages, provides a friendly menu of options |
@@ -67,6 +68,13 @@ ngrok http 8000
 ## Conversation flow
 
 ```
+[User adds bot as friend]
+Bot:  歡迎光臨稻香園 🍽️
+      我可以幫您：
+      📅 【預約訂位】輸入「預約」或「訂位」
+      ❓ 【餐廳資訊】直接問我，例如：幾點營業？停車方便嗎？
+      ❌ 【取消操作】輸入「取消」
+
 User: 我想訂位
 Bot:  您好！歡迎預約 🍽️  請問您的大名是？
 User: 王小明
