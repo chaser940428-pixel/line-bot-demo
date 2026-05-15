@@ -66,6 +66,17 @@ async def webhook(request: Request):
     data = await request.json()
 
     for event in data.get("events", []):
+        if event.get("type") == "follow":
+            await reply(event["replyToken"], [text(
+                "歡迎光臨稻香園 🍽️\n\n"
+                "我可以幫您：\n"
+                "📅 【預約訂位】輸入「預約」或「訂位」\n"
+                "❓ 【餐廳資訊】直接問我，例如：幾點營業？停車方便嗎？\n"
+                "❌ 【取消操作】輸入「取消」\n\n"
+                "請問需要什麼協助？"
+            )])
+            continue
+
         if event.get("type") != "message":
             continue
         if event["message"].get("type") != "text":
