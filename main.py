@@ -113,12 +113,7 @@ async def webhook(request: Request):
             )])
 
         else:
-            await reply(reply_token, [text(
-                "您好！我可以幫您：\n\n"
-                "📅 【預約】輸入「預約」或「訂位」\n"
-                "❓ 【查詢】輸入您的問題\n"
-                "❌ 【取消】輸入「取消」\n\n"
-                "請問需要什麼協助呢？"
-            )])
+            answer = answer_faq(user_text)
+            await reply(reply_token, [text(answer)])
 
     return JSONResponse(content={"status": "ok"})
