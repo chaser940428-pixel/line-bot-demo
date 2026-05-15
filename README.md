@@ -2,7 +2,11 @@
 
 A production-ready LINE Bot showcasing AI-powered customer service automation for traditional businesses. Built to demonstrate how SMBs can replace manual message handling with intelligent automation.
 
-**Live demo**: Scan the QR code on the [project page](https://github.com/chaser940428-pixel/line-bot-demo) to chat with the bot directly.
+**Live demo**: Scan the QR code below to chat with the bot directly.
+
+> **Note**: The server may take ~30 seconds to wake up on first use. Open the [health endpoint](https://line-bot-demo-a3pp.onrender.com) first, wait for `{"status":"ok"}`, then scan the QR code.
+
+<img src="qr-code.png" alt="LINE Bot QR Code" width="200"/>
 
 ## What it does
 
@@ -31,7 +35,7 @@ LINE App → LINE Messaging API → Webhook (FastAPI)
            (SessionStore)
 ```
 
-**Stack**: FastAPI · LINE Messaging API · Groq (llama-3.1-8b-instant) · Python 3.11 · Render
+**Stack**: FastAPI · LINE Messaging API · Groq (llama-3.1-8b-instant) · Python 3.11 · Render (free tier)
 
 ## Key design decisions
 
